@@ -1,0 +1,14 @@
+1、页面呈现
+访问特定的资源路径显示对应的页面
+2、博客列表
+数据从服务端来获取：先把页面获取出来，jquery ajax从服务端获取数据
+$.get("",function(data){
+
+})
+
+3、动态生成超链接地址  http://localhost:8081/detail?chapterId=
+Id值取决于上面get拼接时的值
+4、文章的详情页
+$.get("",function(){
+
+})

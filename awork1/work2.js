@@ -23,11 +23,14 @@ http.createServer(function(req,res){
         res.end(listStr);
     }else if(pathName=='/detail'){
         showIndex(res,"/chapter");
-    }else if(pathName=='getDetail'){
+    }else if(pathName=='/getDetail'){
         var urlObject=url.parse(req.url,true);
         for(var i=0;i<list.length;i++){
+            console.log(list[i].chapterId);
             if(urlObject.query.chapterId==list[i].chapterId){
+                console.log(urlObject.query.chapterId);
                 var listStr=JSON.stringify(list[i]);
+                console.log(listStr);
                 res.end(listStr);
             }
         }
@@ -53,7 +56,7 @@ http.createServer(function(req,res){
             var title=addContent.title;
             var content=addContent.content;
             var newObj={
-                "chapterId": list[l.length-1].chapterId+1,
+                "chapterId": list[length-1].chapterId+1,
                 "chapterName": title ,
                 "imgPath": "",
                 "chapterDes": content,
